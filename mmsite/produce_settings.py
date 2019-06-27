@@ -4,7 +4,7 @@ Author: shangxc
 Created Time: 2019-06-27 21:55
 """
 # 导入公共配置
-from settings import *
+from .settings import *
 
 # 生产环境关闭DEBUG模式
 DEBUG = False
