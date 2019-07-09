@@ -129,6 +129,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 CRONJOBS = [
-    # 表示每天2：01执行
-    ('0 0 * * *', 'backend.task.check_flow')
+    # ('0 0 * * *', 'backend.task.check_flow')
+    ('*/2 * * * *', 'backend.task.check_flow')
 ]
