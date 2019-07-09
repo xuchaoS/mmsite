@@ -7,7 +7,7 @@ Created Time: 2019-07-09 22:51
 """
 from .models import Flow, Port
 import os
-from traceback import print_exc
+import traceback
 
 
 def check_flow():
@@ -18,7 +18,9 @@ def check_flow():
                 r"""iptables -vnxL|grep -E "p [sd]pt:%d$"|awk 'BEGIN{total=0}{total+=$2}END{print total}'""" % port.port).read()
             Flow.objects.create(port=port, flow=int(result))
     except Exception:
-        print_exc()
+        with open('/home/exp.log', 'w') as f:
+            f.write(traceback.format_exc())
+            f.write('\n')
 
 
 
