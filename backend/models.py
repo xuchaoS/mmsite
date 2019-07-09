@@ -21,3 +21,14 @@ class Port(models.Model):
     def __str__(self):
         return f'{self.port} @ {self.owner}'
 
+
+class Flow(models.Model):
+    port = models.ForeignKey(
+        Port,
+        on_delete=models.PROTECT
+    )
+    datetime = models.DateTimeField(auto_now_add=True)
+    flow = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f'{self.port} @ {self.datetime} : {self.flow}'

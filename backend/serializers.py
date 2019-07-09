@@ -17,7 +17,7 @@ class PortSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Port
-        fields = ('port', 'owner_name', 'owner')
+        fields = ('id', 'port', 'owner_name', 'owner')
 
 
 if __name__ == '__main__':
