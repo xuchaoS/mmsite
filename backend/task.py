@@ -11,7 +11,7 @@ import traceback
 
 
 def check_flow():
-    with open('success.log', 'w') as f:
+    with open('/home/success.log', 'w') as f:
         f.write('success')
 
     try:
