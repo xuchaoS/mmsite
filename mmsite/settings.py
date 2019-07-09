@@ -130,5 +130,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 CRONJOBS = [
     # ('0 0 * * *', 'backend.task.check_flow')
-    ('*/1 * * * *', 'backend.task.check_flow1', '>> /home/error')
+    ('*/1 * * * *', 'backend.task.task', '>> /home/error')
 ]

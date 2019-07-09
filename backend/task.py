@@ -10,7 +10,7 @@ import os
 import traceback
 
 
-def check_flow():
+def task():
     with open('/home/success.log', 'w') as f:
         f.write('success')
 
