@@ -11,6 +11,7 @@ import traceback
 
 
 def task():
+    print('fjjfjfjf')
     with open('/home/success.log', 'w') as f:
         f.write('success')
 
