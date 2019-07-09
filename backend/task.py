@@ -11,6 +11,9 @@ import traceback
 
 
 def check_flow():
+    with open('success.log', 'w') as f:
+        f.write('success')
+
     try:
         ports = Port.objects.all()
         for port in ports:
