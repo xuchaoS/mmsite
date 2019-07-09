@@ -80,6 +80,19 @@
         </a>
       </li>
     </ul>
+    <div>ajajajjaja</div>
+    <table>
+      <thead>
+      <tr>
+        <th>port</th><th>user</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1234</td><td>shangxc</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 

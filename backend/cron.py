@@ -9,20 +9,11 @@ import traceback
 
 
 def task():
-    print('fjjfjfjf')
-    with open('/home/success.log', 'w') as f:
-        f.write('success')
-
-    try:
-        ports = Port.objects.all()
-        for port in ports:
-            result = os.popen(
-                r"""iptables -vnxL|grep -E "p [sd]pt:%d$"|awk 'BEGIN{total=0}{total+=$2}END{print total}'""" % port.port).read()
-            Flow.objects.create(port=port, flow=int(result))
-    except Exception:
-        with open('/home/exp.log', 'w') as f:
-            f.write(traceback.format_exc())
-            f.write('\n')
+    ports = Port.objects.all()
+    for port in ports:
+        result = os.popen(
+            r"""iptables -vnxL|grep -E "p [sd]pt:%d$"|awk 'BEGIN{total=0}{total+=$2}END{print total}'""" % port.port).read()
+        Flow.objects.create(port=port, flow=int(result))
 
 
 
