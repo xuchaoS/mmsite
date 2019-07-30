@@ -31,4 +31,16 @@ class Flow(models.Model):
     flow = models.PositiveIntegerField()
 
     def __str__(self):
-        return f'{self.port} @ {self.datetime} : {self.flow}'
+        flow = self.flow
+        unit = 'B'
+        if flow >= 1024:
+            flow /= 1024
+            unit = 'KB'
+            if flow >= 1024:
+                flow /= 1024
+                unit = 'MB'
+                if flow >= 1024:
+                    flow /= 1024
+                    unit = 'GB'
+
+        return f'{self.port} @ {self.datetime} : {flow:.2f} {unit}'
