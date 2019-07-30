@@ -45,4 +45,4 @@ class Flow(models.Model):
                     unit = 'GB'
         self.datetime.astimezone(get_default_timezone())
 
-        return f'{self.port} @ {self.datetime.ctime()} : {flow:.2f} {unit}'
+        return f'{self.port} @ {self.datetime.time()} : {flow:.2f} {unit}'
