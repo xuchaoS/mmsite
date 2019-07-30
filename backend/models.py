@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.conf import settings
+from django.utils.timezone import get_default_timezone
 
 
 # Create your models here.
@@ -42,5 +43,6 @@ class Flow(models.Model):
                 if flow >= 1024:
                     flow /= 1024
                     unit = 'GB'
+        self.datetime.astimezone(get_default_timezone())
 
-        return f'{self.port} @ {self.datetime} : {flow:.2f} {unit}'
+        return f'{self.port} @ {self.datetime.ctime()} : {flow:.2f} {unit}'
