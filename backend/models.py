@@ -43,4 +43,4 @@ class Flow(models.Model):
                     flow /= 1024
                     unit = 'GB'
 
-        return f'{self.port} @ {self.datetime.timetz()} : {flow:.2f} {unit}'
+        return f'{self.port} @ {self.datetime.time()} : {flow:.2f} {unit}'
